@@ -1,0 +1,13 @@
+.item {
+    cursor: pointer;
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    margin: 1rem;
+    max-width: 250px;
+}
+  
+.done {
+    text-decoration: line-through;
+}

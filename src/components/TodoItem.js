@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { updateDone } from '../actions';
+import styles from  './todo-item.module.css';
 
 // {item} - kallas för destructering och kan användas för att plocka ut en egenskap från props-objektet
 function TodoItem(props) {
@@ -8,7 +9,7 @@ function TodoItem(props) {
     const dispatch = useDispatch();
 
     return (
-        <li className={'todo-item' + (props.done ? ' done' : '' )}
+        <li className={styles.item + ' ' + (props.done ? styles.done : '' )}
             onClick={ () => dispatch(updateDone(props.id)) }>
                 { props.item }
         </li>

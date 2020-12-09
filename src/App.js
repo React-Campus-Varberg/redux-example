@@ -4,6 +4,7 @@ import TodoItem from './components/TodoItem';
 import AddTodo from './components/AddTodo';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTodos } from './api';
+import './App.css';
 
 /**
  1. När användaren lägger till en ny todo i AddTodo
