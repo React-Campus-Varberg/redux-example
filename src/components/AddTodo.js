@@ -1,5 +1,5 @@
 import React from 'react';
-import { addTodo } from '../actions'
+import { postTodo } from '../api'
 import { useDispatch } from 'react-redux';
 
 // {item} - kallas för destructering och kan användas för att plocka ut en egenskap från props-objektet
@@ -11,7 +11,7 @@ function AddTodo(props) {
         //console.log(event);
         if(event.key === 'Enter') {
             console.log('Todo added: ', event.target.value);
-            dispatch(addTodo(event.target.value));
+            dispatch(postTodo({ task: event.target.value }));
             event.target.value = '';
         }
     }

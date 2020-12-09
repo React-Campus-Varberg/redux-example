@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import TodoItem from './components/TodoItem';
 import AddTodo from './components/AddTodo';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchTodos } from './api';
 
 /**
  1. När användaren lägger till en ny todo i AddTodo
@@ -13,6 +14,7 @@ import { useSelector } from 'react-redux';
 
 function App(props) {
     const todos = useSelector(state => state.todo.todos);
+    const dispatch = useDispatch();
 
     const [latestTodo, setLastestTodo] = useState('');
 
@@ -20,6 +22,10 @@ function App(props) {
         console.log('I addTodo: ', todo);  
         setLastestTodo(todo.task);
     }
+
+    useEffect(() => {
+        dispatch(fetchTodos());
+    }, [])
 
     return (
         <article className="todo-app">

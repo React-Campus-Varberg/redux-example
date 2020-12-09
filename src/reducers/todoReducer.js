@@ -32,6 +32,11 @@ const todoReducer = (state = initialState, action) => {
                     }
                 })
             }
+        case 'FETCH_TODOS':
+            return {
+                ...state,
+                todos: action.payload
+            }
         default:
             return state;
     }
